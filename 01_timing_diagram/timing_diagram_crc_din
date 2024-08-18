@@ -1,0 +1,38 @@
+{signal: 
+  [
+    {name : 'CK',            wave : '0101010101010101010'},
+    {name : 'PS',            wave : '33.3.7.7.7.7.7.7.7.', data : 'CNT_UP... SHIFT_PRTL CALC_CRC_PRTL LOAD_DIN SHIFT_DIN CALC_CRC_DIN CNT_UP_DIN SHIFT_DIN CALC_CRC_DIN CNT_UP_DIN'},
+    {name : 'START',         wave : '0..................', phase : -0.4},
+    {name : 'DIN',           wave : '2..................', phase : -0.4, data : 'DIN'},
+    {name : 'DOUT',          wave : 'x..................', phase : -0.4},
+    {name : 'CTRL', 		     wave : '0..................', phase : -0.4},
+    {name : 'STATUS',        wave : '1....0.............', phase : -0.3},
+    {name : 'WR_DOUT',       wave : '0..................', phase : -0.4},
+    {name : 'WR_CTRL',       wave : '0..................', phase : -0.4},
+    {name : 'WR_STATUS',     wave : '0....1.0...........', phase : -0.3},
+    {name : 'S_DIN',         wave : '3....7.............', data : '00 01', phase : -0.3, node : '.....C'},
+    {name : 'S_DOUT',        wave : '1..................', phase : -0.4},
+    {name : 'LD_PISO',       wave : '0....1.0...........', phase : -0.3},
+    {name : 'SE_PISO',       wave : '01.0...1.0...1.0...', node : '.......E', phase : -0.3},
+    {name : 'EN_LFSR',       wave : '0..1.0...1.0...1.0.', node : '.........G', phase : -0.3},
+    {name : 'D_PISO',    	   wave : '3....7.............', data : 'CRC_PRTL DIN', node : '.....D', phase : -0.5},
+    {name : 'D_LFSR',  		   wave : '3..3.....7.....7...', data : 'CRC_PRTL<sub>1</sub> CRC_PRTL<sub>0</sub> DIN<sub>15</sub> DIN<sub>14</sub>', node : '.........F', phase : -0.5},
+    {name : 'CRC',           wave : '3....3.....7.....7.', data : 'crc(CRC_PRTL<sub>1</sub>) crc(CRC_PRTL<sub>0</sub>) crc(DIN<sub>15</sub>) crc(DIN<sub>14</sub>)', node : '...........H', phase : -0.5},
+    {name : 'EN_PRTL',       wave : '0..................', phase : -0.3},
+    {name : 'CRC_PRTL',      wave : 'x..................', phase : -0.3},
+    {name : 'EN_FNL',        wave : '0..................', phase : -0.3},
+    {name : 'CRC_FNL',       wave : 'x..................', phase : -0.3},
+    {name : 'CNT',           wave : '33...7.......7.....', data : '14 15 0 1', phase : -0.3},
+    {name : 'TC',            wave : '01...0.............', phase : -0.3},  
+  ],
+   
+  config: { hscale: 2 },
+     
+  head:{
+     tock:0,
+     every:1
+  },
+     
+  edge: ['B-~>A', 'C-~>D', 'E~>F', 'G~>H'],
+ 
+}
